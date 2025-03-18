@@ -1,64 +1,65 @@
 package JYM;
 
 public class Personaje {
-	// Atributos
-	private String Nombre;
-	private int Nivel;
-	private int PuntosVida;
-	private Inventario Inventario;
-	
-	 // Constructor
-		public Personaje(String nombre, int nivel, int puntosVida) {
-		    this.Nombre = nombre;
-		    this.Nivel = nivel;
-		    this.PuntosVida = puntosVida;
-		    this.Inventario = new Inventario();
-		}	
-		
-		// Método para reducir los puntos de vida
-	    public void bajarVida(int vida) {
-	        if (vida > 0) {
-	            this.PuntosVida -= vida;
-	            if (this.PuntosVida < 0) {
-	                this.PuntosVida = 0;
-	            }
-	        }
-	    }
-	    // Getters y Setters
-	    public String getNombre() {
-	        return Nombre;
-	    }
+	  // Atributos
+    private String nombre;
+    private int nivel;
+    private int puntosVida;
+    private Inventario inventario;
 
-	    public void setNombre(String nombre) {
-	        this.Nombre = nombre;
-	    }
+    // Constructor
+    public Personaje(String nombre, int nivel, int puntosVida) {
+        this.nombre = nombre;
+        this.nivel = nivel;
+        this.puntosVida = puntosVida;
+        this.inventario = new Inventario();
+    }
 
-	    public int getNivel() {
-	        return Nivel;
-	    }
+    // Método para reducir los puntos de vida
+    public void bajarVida(int vida) {
+        if (vida > 0) {
+            this.puntosVida -= vida;
+            if (this.puntosVida < 0) {
+                this.puntosVida = 0;
+            }
+        }
+    }
 
-	    public void setNivel(int nivel) {
-	        this.Nivel = nivel;
-	    }
+    // Getters y Setters
+    public String getNombre() {
+        return nombre;
+    }
 
-	    public int getPuntosVida() {
-	        return PuntosVida;
-	    }
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
 
-	    public void setPuntosVida(int puntosVida) {
-	        this.PuntosVida = puntosVida;
-	    }
+    public int getNivel() {
+        return nivel;
+    }
 
-	    public Inventario getInventario() {
-	        return Inventario;
-	    }
+    public void setNivel(int nivel) {
+        this.nivel = nivel;
+    }
 
-	    public void setInventario(Inventario inventario) {
-	        this.Inventario = inventario;
-	    }
+    public int getPuntosVida() {
+        return puntosVida;
+    }
 
-	    // Agregar equipamiento al inventario
-	    public void agregarEquipamiento(Equipamiento equipamiento) {
-	    	this.Inventario.agregarEquipamiento(equipamiento);
-	    }
-	}
+    public void setPuntosVida(int puntosVida) {
+        this.puntosVida = puntosVida;
+    }
+
+    public Inventario getInventario() {
+        return inventario;
+    }
+
+    public void setInventario(Inventario inventario) {
+        this.inventario = inventario;
+    }
+
+    // Agregar equipamiento al inventario
+    public void agregarEquipamiento(Equipamiento item) {
+        this.inventario.agregarEquipamiento(item);
+    }
+}
