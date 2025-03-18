@@ -26,8 +26,13 @@ public class Inventario {
 	    }
 
 	    // Método para obtener la lista de equipamiento
-	    public ArrayList<Equipamiento> getEquip() {
-	        return equipamiento;
-	    }
+
+		public ArrayList<Equipamiento> getEquipamiento() {
+			return equipamiento;
+		}
+
+		public void setEquipamiento(ArrayList<Equipamiento> equipamiento) {
+			this.equipamiento = equipamiento;
+		}
 	}
 }
