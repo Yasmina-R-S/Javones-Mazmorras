@@ -6,16 +6,7 @@ public class Personaje {
 	private int Nivel;
 	private int PuntosVida;
 	private Inventario Inventario;
-		
-			
-	// El constructor es un método especial que se llama al crear un objeto de la clase.
-	// Constructor			// en vez de int se puede utilizar double para decimales.
-	public Personaje (String Titular, int Cantidad) {
-		this.Nombre = Nombre;
-		this.Nivel = Nivel;
-		this.PuntosVida = PuntosVida;
-		this.Inventario = Inventario;
-	}	
+	
 	 // Constructor
 		public Personaje(String nombre, int nivel, int puntosVida) {
 		    this.Nombre = nombre;
@@ -67,7 +58,7 @@ public class Personaje {
 	    }
 
 	    // Agregar equipamiento al inventario
-	    public void agregarEquip(Equip equipamiento) {
-	        this.Inventario.agregarEquip(equipamiento);
+	    public void agregarEquipamiento(Equipamiento equipamiento) {
+	    	this.Inventario.agregarEquipamiento(equipamiento);
 	    }
 	}

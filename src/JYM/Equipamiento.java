@@ -1,11 +1,11 @@
 package JYM;
 
-public class Equip {
-	 private String nombre;
+public class Equipamiento {
+	  private String nombre;
 	    private String tipo;
 
 	    // Constructor
-	    public Equip(String nombre, String tipo) {
+	    public Equipamiento(String nombre, String tipo) {
 	        this.nombre = nombre;
 	        this.tipo = tipo;
 	    }
