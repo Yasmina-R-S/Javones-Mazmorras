@@ -3,36 +3,32 @@ package JYM;
 import java.util.ArrayList;
 
 public class Inventario {
+    private ArrayList<Equipamiento> equipamiento;
 
-	public class inventario {
-		private ArrayList<Equipamiento> equipamiento = new ArrayList<>();
+    // Constructor
+    public Inventario() {
+        this.equipamiento = new ArrayList<>();
+    }
 
-	    // Constructor
-	    public inventario() {
-	        this.equipamiento = new ArrayList<>();
-	    }
+    // Método para agregar equipamiento
+    public void agregarEquipamiento(Equipamiento item) {
+        equipamiento.add(item);
+    }
 
-	 // Método para agregar equipamiento
-	    public void agregarEquipamiento(Equipamiento item) {
-	        equipamiento.add(item);
-	    }
+    // Método para mostrar el inventario
+    public void mostrarInventario() {
+        System.out.println("Inventario:");
+        for (Equipamiento item : equipamiento) {
+            System.out.println("- " + item.getNombre() + " (" + item.getTipo() + ")");
+        }
+    }
 
-	    // Método para mostrar el inventario
-	    public void mostrarInventario() {
-	        System.out.println("Inventario:");
-	        for (Equipamiento item : equipamiento) {
-	            System.out.println("- " + item.getNombre() + " (" + item.getTipo() + ")");
-	        }
-	    }
+    // Getters y Setters
+    public ArrayList<Equipamiento> getEquipamiento() {
+        return equipamiento;
+    }
 
-	    // Método para obtener la lista de equipamiento
-
-		public ArrayList<Equipamiento> getEquipamiento() {
-			return equipamiento;
-		}
-
-		public void setEquipamiento(ArrayList<Equipamiento> equipamiento) {
-			this.equipamiento = equipamiento;
-		}
-	}
+    public void setEquipamiento(ArrayList<Equipamiento> equipamiento) {
+        this.equipamiento = equipamiento;
+    }
 }
