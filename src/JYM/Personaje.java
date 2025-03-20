@@ -62,4 +62,9 @@ public class Personaje {
     public void agregarEquipamiento(Equipamiento item) {
         this.inventario.agregarEquipamiento(item);
     }
+
+	public void mostrarInfo() {
+		// TODO Auto-generated method stub
+		
+	}
 }

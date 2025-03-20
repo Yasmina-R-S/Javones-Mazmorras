@@ -11,15 +11,19 @@ public class Inventario {
     }
 
     // Método para agregar equipamiento
-    public void agregarEquipamiento(Equipamiento item) {
-        equipamiento.add(item);
+    public void agregarEquipamiento(Equipamiento equipamiento) {
+        this.equipamiento.add(equipamiento);
+        System.out.println(equipamiento.getNombre() + " ha sido añadido al inventario.");
     }
 
-    // Método para mostrar el inventario
     public void mostrarInventario() {
         System.out.println("Inventario:");
-        for (Equipamiento item : equipamiento) {
-            System.out.println("- " + item.getNombre() + " (" + item.getTipo() + ")");
+        if (equipamiento.isEmpty()) {
+            System.out.println("El inventario está vacío.");
+        } else {
+            for (Equipamiento e : equipamiento) {
+                System.out.println("- " + e.getNombre() + " (" + e.getTipo() + ")");
+            }
         }
     }
 
