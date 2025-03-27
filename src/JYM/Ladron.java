@@ -1,41 +1,30 @@
 package JYM;
 
 public class Ladron extends Personaje {
-	 private boolean invisible;
+	  private int invisible; // 0 significa no invisible, 1 significa invisible
 
-	 public Ladron(String nombre, int nivel, int puntosVida) {
-	     super(nombre, nivel, puntosVida);
-	     this.invisible = false;
-	 }
+	    public Ladron(String nombre, int nivel, int puntosVida) {
+	        super(nombre, nivel, puntosVida);
+	        this.invisible = 0; // No está invisible por defecto
+	    }
 
-	 // Métodos específicos de Ladron
-	 public void robar() {
-	     if (invisible) {
-	         System.out.println(getNombre() + " roba sin ser visto!");
-	     } else {
-	         System.out.println(getNombre() + " intenta robar, pero todos pueden verlo!");
-	     }
-	 }
+	    // Getter y Setter para invisible
+	    public int getInvisible() {
+	        return invisible;
+	    }
 
-	 public void hacerseInvisible() {
-	     this.invisible = !this.invisible;
-	     if (invisible) {
-	         System.out.println(getNombre() + " invisible.");
-	     } else {
-	         System.out.println(getNombre() + " no invisible.");
-	     }
-	 }
+	    public void setInvisible(int invisible) {
+	        if (invisible == 0 || invisible == 1) { // Solo se permiten valores 0 o 1
+	            this.invisible = invisible;
+	        }
+	    }
 
-	 public boolean estaInvisible() {
-	     return invisible;
-	 }
-
-	 // Setters y Getters
-	 public boolean isInvisible() {
-	     return invisible;
-	 }
-
-	 public void setInvisible(boolean invisible) {
-	     this.invisible = invisible;
-	 }
+	    // Métodos específicos de Ladrón
+	    public void robar() {
+	        if (invisible == 1) { // Si está invisible, puede robar sin ser visto
+	            System.out.println(getNombre() + " roba sin ser visto!");
+	        } else {
+	            System.out.println(getNombre() + " intenta robar, pero todos pueden verlo!");
+	        }
+	    }
 }

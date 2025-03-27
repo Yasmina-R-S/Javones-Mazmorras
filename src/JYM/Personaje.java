@@ -1,31 +1,31 @@
 package JYM;
 
 public class Personaje {
-	  // Atributos
-    private String nombre;
-    private int nivel;
-    private int puntosVida;
-    private Inventario inventario;
+	// Atributos (cosas que definen al personaje)
+    private String nombre; // Nombre del personaje
+    private int nivel; // Nivel del personaje
+    private int puntosVida; // Cantidad de vida del personaje
+    private Inventario inventario; // Cada personaje tiene su propio inventario
 
-    // Constructor
+    // Constructor: se ejecuta cuando creamos un personaje.
     public Personaje(String nombre, int nivel, int puntosVida) {
-        this.nombre = nombre;
-        this.nivel = nivel;
-        this.puntosVida = puntosVida;
-        this.inventario = new Inventario();
+        this.nombre = nombre; // Guardamos el nombre que le pasamos al crear el personaje
+        this.nivel = nivel; // Guardamos el nivel
+        this.puntosVida = puntosVida; // Guardamos la cantidad de vida
+        this.inventario = new Inventario(); // Inicializamos el inventario vacío
     }
 
-    // Método para reducir los puntos de vida
+    // Método para bajar la vida del personaje cuando recibe daño
     public void bajarVida(int vida) {
-        if (vida > 0) {
-            this.puntosVida -= vida;
-            if (this.puntosVida < 0) {
+        if (vida > 0) { // Nos aseguramos de que el daño sea positivo
+            this.puntosVida -= vida; // Restamos la cantidad de vida que recibe como daño
+            if (this.puntosVida < 0) { // Si la vida baja de 0, la dejamos en 0 (no hay vida negativa)
                 this.puntosVida = 0;
             }
         }
     }
 
-    // Getters y Setters
+    // Métodos para obtener (get) y modificar (set) los atributos del personaje.
     public String getNombre() {
         return nombre;
     }
@@ -58,13 +58,15 @@ public class Personaje {
         this.inventario = inventario;
     }
 
-    // Agregar equipamiento al inventario
-    public void agregarEquipamiento(Equipamiento item) {
-        this.inventario.agregarEquipamiento(item);
+    // Método para agregar equipamiento al inventario del personaje
+    public void agregarEquipamiento(Equipamiento equipamiento) {
+        this.inventario.agregarEquipamiento(equipamiento); // Llamamos al método del inventario
     }
 
-	public void mostrarInfo() {
-		// TODO Auto-generated method stub
-		
-	}
+    // Método para mostrar la información del personaje en pantalla
+    public void mostrarInfo() {
+        System.out.println("Nombre: " + nombre);
+        System.out.println("Nivel: " + nivel);
+        System.out.println("Puntos de Vida: " + puntosVida);
+    }
 }
